@@ -1,0 +1,15 @@
+@import url('./index.css');
+
+.score-board-button {
+  display: block;
+  padding: 1em;
+  border-width: 5px;
+  border-top-color: var(--button-color-t);
+  border-left-color: var(--button-color-l);
+  border-right-color: var(--button-color-r);
+  border-bottom-color: var(--button-color-b);
+}
+
+.score-board {
+  grid-area: r;
+}
