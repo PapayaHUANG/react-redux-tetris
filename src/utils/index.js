@@ -1,4 +1,4 @@
-export const random = (min, max) => {
+const random = (min, max) => {
   return Math.random() * (max - min + 1) + min;
 };
 
@@ -155,7 +155,7 @@ export const shapes = [
   ],
 ];
 
-export const randomShape = () => {
+const randomShape = () => {
   return random(1, shapes.length - 1);
 };
 
