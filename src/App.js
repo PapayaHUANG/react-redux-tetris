@@ -1,8 +1,8 @@
 import './styles/App.css';
 
-import { legacy_createStore as createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import reducers from './reducers/index';
+import gameReducer from './slices/game-slice';
 
 import Board from './components/Board';
 import NextBlock from './components/NextBlock';
@@ -10,7 +10,7 @@ import ScoreBoard from './components/ScoreBoard';
 import Controls from './components/Controls';
 import MessagePopup from './components/MessagePopup';
 
-const store = createStore(reducers);
+const store = configureStore({ reducer: { game: gameReducer } });
 
 function App() {
   return (
