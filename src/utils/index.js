@@ -191,11 +191,13 @@ export const canMoveTo = (shape, grid, x, y, rotation) => {
         const proposedX = col + x;
         // y offset on grid
         const proposedY = row + y;
+
         if (proposedY < 0) {
           continue;
         }
         // Get the row on the grid
         const possibleRow = grid[proposedY];
+
         // Check row exists
         if (possibleRow) {
           // Check if this column in the row is undefined, if it's off the edges, 0, and empty
@@ -216,18 +218,24 @@ export const canMoveTo = (shape, grid, x, y, rotation) => {
 };
 
 export const addBlockToBoard = (shape, board, x, y, rotation) => {
+  let blockOffBoard = false;
   const block = shapes[shape][rotation];
-  console.log(block);
+
   const newBoard = [...board];
   for (let row = 0; row < block.length; row++) {
     for (let col = 0; col < block[row].length; col++) {
       if (block[row][col]) {
-        newBoard[row + y][col + x] = shape;
+        const yIndex = row + y;
+        if (yIndex < 0) {
+          blockOffBoard = true;
+        } else {
+          newBoard[row + y][col + x] = shape;
+        }
       }
     }
   }
 
-  return newBoard;
+  return { board: newBoard, gameOver: blockOffBoard };
 };
 
 export const checkRows = (board) => {

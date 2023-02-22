@@ -38,29 +38,38 @@ const gameSlice = createSlice({
       const { shape, board, x, y, rotation, nextShape, score, isRunning } =
         state;
       const maybeY = y + 1;
-      if (canMoveTo(shape, board, x, y + 1, rotation)) {
+      if (canMoveTo(shape, board, x, maybeY, rotation)) {
         state.y = maybeY;
-      }
-      const newBoard = addBlockToBoard(shape, board, x, y, rotation);
+      } else {
+        const obj = addBlockToBoard(shape, board, x, y, rotation);
+        const newBoard = obj.board;
+        const gameOver = obj.gameOver;
+        if (gameOver) {
+          state.shape = 0;
+          state.gameOver = gameOver;
+          state.board = newBoard;
+        } else {
+          state.board = newBoard;
+          state.shape = nextShape;
+          state.nextShape = randomShape();
 
-      const newState = defaultState();
-      newState.board = newBoard;
-      newState.shape = nextShape;
-      newState.nextShape = randomShape();
-      newState.score = score;
-      newState.isRunning = isRunning;
-      if (!canMoveTo(nextShape, newBoard, 0, 4, 0)) {
-        console.log('Game should be over...');
-        newState.shape = 0;
-        newState.gameOver = true;
+          state.score = score + checkRows(newBoard);
+          state.isRunning = isRunning;
+          state.x = 5;
+          state.y = -4;
+        }
       }
-      newState.score = score + checkRows(newBoard);
-      state = newState;
     },
-    resume: (state, action) => {},
-    pause: (state, action) => {},
-    gameOver: (state, action) => {},
-    restart: (state, action) => {},
+    resume: (state) => {
+      state.isRunning = true;
+    },
+    pause: (state) => {
+      state.isRunning = false;
+    },
+
+    restart: (state) => {
+      state = defaultState();
+    },
   },
 });
 
