@@ -30,6 +30,7 @@ export default function Controls(props) {
   };
   return (
     <div className="controls">
+      {/* left */}
       <button
         disabled={!isRunning || gameOver}
         className="control-button"
@@ -37,6 +38,7 @@ export default function Controls(props) {
       >
         Left
       </button>
+      {/* right */}
       <button
         disabled={!isRunning || gameOver}
         className="control-button"
@@ -44,6 +46,7 @@ export default function Controls(props) {
       >
         Right
       </button>
+      {/* rotate */}
       <button
         disabled={!isRunning || gameOver}
         className="control-button"
@@ -51,6 +54,7 @@ export default function Controls(props) {
       >
         Rotate
       </button>
+      {/* down */}
       <button
         disabled={!isRunning || gameOver}
         className="control-button"

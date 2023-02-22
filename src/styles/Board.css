@@ -1,9 +1,13 @@
 @import url('./index.css');
 
+.board-container {
+  grid-area: c;
+  display: flex;
+  justify-content: center;
+}
 .board {
   display: grid;
   grid-template-columns: repeat(var(--cols), var(--tile-size));
   grid-gap: 0;
   align-self: flex-start;
-  grid-area: c;
 }

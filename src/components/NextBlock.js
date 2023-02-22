@@ -11,7 +11,9 @@ export default function NextBlock() {
 
   const blockToDisplay = block.map((rowArr, row) => {
     return rowArr.map((square, col) => {
-      return <Square key={`${row}${col}`} color={square} />;
+      return (
+        <Square key={`${row}${col}`} color={square === 0 ? 0 : nextShape} />
+      );
     });
   });
 

@@ -15,12 +15,7 @@ code {
 :root {
   --bg-color: rgba(150, 150, 150, 1);
 
-  --border-left-color: rgba(255, 255, 255, 0.2);
-  --border-top-color: rgba(255, 255, 255, 0.33);
-  --border-right-color: rgba(0, 0, 0, 0.15);
-  --border-bottom-color: rgba(0, 0, 0, 0.5);
-
-  --color-0: #eaeaea;
+  --color-0: #282c34;
   --color-1: #ff6600;
   --color-2: #eec900;
   --color-3: #0000ff;
@@ -29,15 +24,12 @@ code {
   --color-6: #66ccff;
   --color-7: #ff0000;
 
-  --button-color-t: rgba(200, 200, 200, 1);
-  --button-color-r: rgba(150, 150, 150, 1);
-  --button-color-b: rgba(120, 120, 120, 1);
-  --button-color-l: rgba(222, 222, 222, 1);
-
   --cols: 10;
   --rows: 18;
   --tile-size: 20px;
-  --border-width: 5px;
+  --border-width: 2px;
+
+  --button-radius: 0%;
 }
 
 .color-0 {
@@ -81,20 +73,21 @@ code {
   --col-center: calc(var(--tile-size) * 10);
   --grid-height: calc(var(--tile-size) * 18);
 
-  width: calc(var(--tile-size) * (4 + 1 + 10 + 1 + 4));
+  width: calc(var(--tile-size) * (4 + 1 + 10));
   margin: auto;
   display: grid;
 
   grid-gap: var(--tile-size) var(--tile-size);
   /* Defines three columns of `--col-side`, `--col-center`, and `--col-side` widths. */
-  grid-template-columns: var(--col-side) var(--col-center) var(--col-side);
+  grid-template-columns: var(--col-side) var(--col-center);
   /* Defines three rows of `100px`, `--grid-height`, and 100px. */
-  grid-template-rows: 100px var(--grid-height) 100px;
+  grid-template-rows: 50px calc(var(--tile-size) * 4) var(--grid-height) 100px;
 
   /* This defines the areas on the grid with names: 'h', 'l', 'c', 'r',
 and 'b'. The '.' represents an empty cell on the grid. */
   grid-template-areas:
-    'h h h'
-    'l c r'
-    '. b .';
+    'h h '
+    'l r '
+    'c c '
+    'b b ';
 }

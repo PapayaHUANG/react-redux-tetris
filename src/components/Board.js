@@ -39,5 +39,9 @@ export default function Board() {
       return <Square key={k} color={color} />;
     });
   });
-  return <div className="board">{boardSquare}</div>;
+  return (
+    <div className="board-container">
+      <div className="board">{boardSquare}</div>
+    </div>
+  );
 }
