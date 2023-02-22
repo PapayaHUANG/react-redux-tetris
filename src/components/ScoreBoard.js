@@ -18,6 +18,10 @@ export default function ScoreBoard(props) {
     }
   }
 
+  function restartHandler() {
+    dispatch(restart());
+  }
+
   return (
     <div className="score-board">
       <div>Score:{score}</div>
@@ -25,10 +29,7 @@ export default function ScoreBoard(props) {
       <button className="score-board-button" onClick={playHandler}>
         {isRunning ? 'Pause' : 'Play'}
       </button>
-      <button
-        className="score-board-button"
-        onClick={() => dispatch(restart())}
-      >
+      <button className="score-board-button" onClick={restartHandler}>
         Restart
       </button>
     </div>

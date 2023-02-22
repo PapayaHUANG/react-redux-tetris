@@ -48,6 +48,7 @@ const gameSlice = createSlice({
           state.shape = 0;
           state.gameOver = gameOver;
           state.board = newBoard;
+          state.isRunning = false;
         } else {
           state.board = newBoard;
           state.shape = nextShape;
@@ -57,6 +58,7 @@ const gameSlice = createSlice({
           state.isRunning = isRunning;
           state.x = 5;
           state.y = -4;
+          state.rotation = 0;
         }
       }
     },
@@ -68,7 +70,7 @@ const gameSlice = createSlice({
     },
 
     restart: (state) => {
-      state = defaultState();
+      return initialState;
     },
   },
 });
