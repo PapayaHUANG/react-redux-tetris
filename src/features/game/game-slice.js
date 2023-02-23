@@ -6,7 +6,7 @@ import {
   addBlockToBoard,
   checkRows,
   randomShape,
-} from '../utils';
+} from '../../utils';
 
 const initialState = defaultState();
 

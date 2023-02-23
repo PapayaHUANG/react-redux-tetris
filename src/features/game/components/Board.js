@@ -2,11 +2,11 @@ import React from 'react';
 import Square from './Square';
 
 import { useSelector } from 'react-redux';
-import { shapes } from '../utils';
-import { moveDown } from '../slices/game-slice';
-import { useTimer } from '../utils/useTimer';
+import { shapes } from '../../../utils';
+import { moveDown } from '../game-slice';
+import { useTimer } from '../../../utils/useTimer';
 
-import '../styles/Board.css';
+import '../../../styles/Board.css';
 
 export default function Board() {
   const game = useSelector((state) => state.game);

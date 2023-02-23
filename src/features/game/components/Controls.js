@@ -1,8 +1,8 @@
 import React from 'react';
-import '../styles/Controls.css';
+import '../../../styles/Controls.css';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { moveLeft, moveRight, moveDown, rotate } from '../slices/game-slice';
+import { moveLeft, moveRight, moveDown, rotate } from '../game-slice';
 
 export default function Controls(props) {
   const dispatch = useDispatch();

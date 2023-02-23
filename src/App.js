@@ -1,16 +1,14 @@
 import './styles/App.css';
 
-import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import gameReducer from './slices/game-slice';
 
-import Board from './components/Board';
-import NextBlock from './components/NextBlock';
-import ScoreBoard from './components/ScoreBoard';
-import Controls from './components/Controls';
-import MessagePopup from './components/MessagePopup';
+import Board from './features/game/components/Board';
+import NextBlock from './features/game/components/NextBlock';
+import ScoreBoard from './features/game/components/ScoreBoard';
+import Controls from './features/game/components/Controls';
+import MessagePopup from './features/game/components/MessagePopup';
 
-const store = configureStore({ reducer: { game: gameReducer } });
+import store from './store';
 
 function App() {
   return (

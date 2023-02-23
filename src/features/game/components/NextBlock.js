@@ -1,9 +1,9 @@
 import React from 'react';
 import Square from './Square';
-import '../styles/NextBlock.css';
+import '../../../styles/NextBlock.css';
 
 import { useSelector } from 'react-redux';
-import { shapes } from '../utils';
+import { shapes } from '../../../utils';
 
 export default function NextBlock() {
   const nextShape = useSelector((state) => state.game.nextShape);

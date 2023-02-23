@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/MessagePopup.css';
+import '../../../styles/MessagePopup.css';
 
 import { useSelector } from 'react-redux';
 export default function MessagePopup() {
