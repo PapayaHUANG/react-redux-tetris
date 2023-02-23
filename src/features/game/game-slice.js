@@ -69,8 +69,14 @@ const gameSlice = createSlice({
       state.isRunning = false;
     },
 
-    restart: (state) => {
+    restart: () => {
       return initialState;
+    },
+    setScore: (state, action) => {
+      state.score = action.payload;
+      if (state.score > state.highestScore) {
+        state.highestScore = state.score;
+      }
     },
   },
 });
@@ -84,6 +90,7 @@ export const {
   pause,
   gameOver,
   restart,
+  setScore,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;
