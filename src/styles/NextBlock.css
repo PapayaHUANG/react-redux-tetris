@@ -5,4 +5,5 @@
   grid-template-columns: repeat(4, var(--tile-size));
   align-self: flex-start;
   grid-area: l;
+  background-color: var(--color-border);
 }
