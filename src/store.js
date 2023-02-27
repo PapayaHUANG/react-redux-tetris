@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import gameReducer from './features/game/game-slice';
+import thunk from 'redux-thunk';
 
 const persistConfig = {
   key: 'root',
@@ -11,6 +12,9 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, gameReducer);
 
-export const store = configureStore({ reducer: { game: persistedReducer } });
+export const store = configureStore({
+  reducer: { game: persistedReducer },
+  middleware: [thunk],
+});
 
 export const persistor = persistStore(store);
