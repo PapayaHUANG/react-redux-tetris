@@ -1,0 +1,24 @@
+name: License
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  license:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install license generator
+        run: npm install -g license-generator
+      - name: Generate license
+        run: license-generator -y -i "Papaya HUANG" -e "shaoyahuang22@gmail.com" -l MIT -o LICENSE
+      - name: Commit license
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: 'Add license'
+          add: LICENSE
+          author_email: your-email@example.com
+          author_name: Your Name
