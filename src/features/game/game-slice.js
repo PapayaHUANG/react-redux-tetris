@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
-  defaultState,
   nextRotation,
   canMoveTo,
   addBlockToBoard,
   checkRows,
   randomShape,
 } from '../../utils';
+import { defaultState } from '../../utils/index';
 
 const initialState = defaultState();
 
@@ -69,8 +69,11 @@ const gameSlice = createSlice({
       state.isRunning = false;
     },
 
-    restart: () => {
-      return initialState;
+    restart: (state) => {
+      return {
+        ...initialState,
+        highestScore: state.highestScore,
+      };
     },
     setScore: (state, action) => {
       state.score = action.payload;
