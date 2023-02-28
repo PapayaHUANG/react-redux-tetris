@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-redux-tetris/static/css/main.6e857043.css",
+    "main.js": "/react-redux-tetris/static/js/main.4ccecd55.js",
+    "index.html": "/react-redux-tetris/index.html",
+    "main.6e857043.css.map": "/react-redux-tetris/static/css/main.6e857043.css.map",
+    "main.4ccecd55.js.map": "/react-redux-tetris/static/js/main.4ccecd55.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e857043.css",
+    "static/js/main.4ccecd55.js"
+  ]
+}
