@@ -6,7 +6,7 @@ React-Redux-Tetris 是一个使用 React 和 Redux 构建的俄罗斯方块游�
 
 你可以在这里玩游戏：[https://papayahuang.github.io/react-redux-tetris/](https://papayahuang.github.io/react-redux-tetris/)
 
-![GIF](https://raw.githubusercontent.com/PapayaHUANG/images/main/img/%E5%B1%8F%E5%B9%95%E5%BD%95%E5%88%B62023-02-28%2014.36.54.mov)
+![GIF](https://raw.githubusercontent.com/PapayaHUANG/images/main/img/%E5%B1%8F%E5%B9%95%E5%BD%95%E5%88%B62023-02-28-14.36.54.gif)
 
 ![display](https://raw.githubusercontent.com/PapayaHUANG/images/main/img/%E6%88%AA%E5%B1%8F2023-02-27%2021.25.49.png)
 
