@@ -79,13 +79,12 @@ code {
   display: grid;
 
   grid-gap: var(--tile-size) var(--tile-size);
-  /* Defines three columns of `--col-side`, `--col-center`, and `--col-side` widths. */
+
   grid-template-columns: var(--col-side) var(--col-center);
-  /* Defines three rows of `100px`, `--grid-height`, and 100px. */
+
   grid-template-rows: 50px calc(var(--tile-size) * 4) var(--grid-height) 100px;
 
-  /* This defines the areas on the grid with names: 'h', 'l', 'c', 'r',
-and 'b'. The '.' represents an empty cell on the grid. */
+
   grid-template-areas:
     'h h '
     'l r '
