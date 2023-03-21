@@ -1,23 +1,23 @@
 @import url('./index.css');
 
 .controls {
-  grid-area: b;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: row;
+	grid-area: b;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: row;
 }
 
 .control-button {
-  --size: calc(var(--tile-size) * 2.5);
-  width: var(--size);
-  height: var(--size);
-  text-align: center;
-  display: block;
-  border-width: 3px;
-  border-radius: var(--button-radius);
-  border-color: none;
-  background-color: var(--color-0);
-  color: white;
-  font-size: 10px;
+	--size: calc(var(--tile-size) * 2.7);
+	width: var(--size);
+	height: var(--size);
+	text-align: center;
+	display: block;
+	border-width: 3px;
+	border-radius: var(--button-radius);
+	border-color: none;
+	background-color: var(--color-0);
+	color: white;
+	font-size: 10px;
 }
